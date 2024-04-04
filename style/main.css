@@ -318,3 +318,220 @@ body {
   width: 50px;
   height: 50px;
 }
+
+.center-text {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.box {
+  width: 100%;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 2s;
+}
+
+@media screen and (max-width: 460px) {
+  .box {
+    left: 48%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .box {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .box {
+    left: 42%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .box {
+    left: 39%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .box {
+    left: 36%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .box {
+    left: 31%;
+  }
+}
+
+canvas {
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+#pinkboard {
+  position: relative;
+
+  margin: auto;
+
+  height: 500px;
+
+  width: 500px;
+
+  animation: animate 1.3s infinite;
+}
+
+#pinkboard:before,
+#pinkboard:after {
+  content: "";
+
+  position: absolute;
+
+  background: #ff5ca4;
+
+  width: 100px;
+
+  height: 160px;
+
+  border-top-left-radius: 50px;
+
+  border-top-right-radius: 50px;
+}
+
+#pinkboard:before {
+  left: 100px;
+
+  transform: rotate(-45deg);
+
+  transform-origin: 0 100%;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#pinkboard:after {
+  left: 0;
+
+  transform: rotate(45deg);
+
+  transform-origin: 100% 100%;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(0.8);
+  }
+
+  60% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart-rate {
+  width: 150px;
+  height: 73px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.fade-in {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  top: 0;
+  right: 0;
+  animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  animation: heartRateOut 2.5s linear infinite;
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes heartRateIn {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes heartRateOut {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: -120%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+#main-screen {
+  transition: 0.3s;
+}

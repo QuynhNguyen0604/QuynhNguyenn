@@ -1,8 +1,12 @@
 var loveinElement = document.querySelector(".lovein");
 var overlayElement = document.querySelector(".overlay");
+const boxElement = document.querySelector(".box");
+const containerElement1 = document.querySelector(".container");
+const bodyE = document.querySelector("body");
 
 loveinElement.onclick = function () {
   overlayElement.style.display = "none";
+
   document.querySelector(".song").play();
   animationTimeline();
 };
@@ -283,10 +287,19 @@ const animationTimeline = () => {
   const replyBtn = document.getElementById("replay");
   const containerElement = document.querySelector("#main-screen");
   const containerAfter = document.querySelector("#after");
+
   replyBtn.onclick = function () {
     containerElement.style.transition = "0.3s";
     containerElement.style.transform = "scale(0)";
-    containerAfter.style.transition = "0.3s";
-    containerAfter.style.transform = "scale(1)";
+    // containerAfter.style.transform = "scale(1)";
+    boxElement.style.opacity = 1;
+    boxElement.style.visibility = "visible";
+    containerElement1.style.display = "none";
+    document.querySelector(".song").pause();
+    bodyE.style.backgroundColor = "black";
+
+    setTimeout(() => {
+      document.querySelector(".tsong").play();
+    }, 700);
   };
 };
